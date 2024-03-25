@@ -26,7 +26,10 @@ describe("solana-nft-anchor", async () => {
 
   const signer = provider.wallet;
 
-  const umi = createUmi("https://api.devnet.solana.com")
+  const endpoint = "http://localhost:8899";
+  // const endpoint = "https://api.devnet.solana.com"
+
+  const umi = createUmi(endpoint)
     .use(walletAdapterIdentity(signer))
     .use(mplTokenMetadata());
 
